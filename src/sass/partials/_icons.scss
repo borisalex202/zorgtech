@@ -1,0 +1,14 @@
+.icon {
+  @include transition($transition);
+
+  &-cross {
+    max-width: 20px;
+    max-height: 20px;
+    color: $main-color;
+    cursor: pointer;
+
+    &:hover {
+      color: $main-color;
+    }
+  }
+}

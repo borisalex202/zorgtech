@@ -1,0 +1,73 @@
+.btn {
+  font-size: $font-size;
+  line-height: 15px;
+  padding: 12px 25px;
+  min-width: 165px;
+  border: 0;
+  border-radius: 20px;
+  text-decoration: none !important;
+  cursor: pointer;
+  width: auto;
+  @include transition($transition);
+
+  &-default {
+    background: $btn-default-bg;
+    color: #fff;
+
+    &:hover {
+      background: $btn-default-bg-hover;
+      color: #fff;
+    }
+    &:focus,
+    &:active,
+    &:active:hover {
+      background: $btn-default-bg-active;
+      color: #fff;
+    }
+  }
+  &-primary {
+    background: $btn-primary-bg;
+    color: #fff;
+
+    &:hover {
+      background: $btn-primary-bg-hover;
+      color: #fff;
+    }
+    &:focus,
+    &:active,
+    &:active:hover {
+      background: $btn-primary-bg-active;
+      color: #fff;
+    }
+  }
+  &-more {
+    min-width: 215px;
+    background: $btn-more-bg;
+    border: 2px solid $btn-more-border;
+    color: rgba(0,0,0,.5);
+
+    &:hover {
+      border: 2px solid $btn-more-bg-hover;
+      background: $btn-more-bg-hover;
+      color: #000;
+    }
+    &:focus,
+    &:active,
+    &:active:hover {
+      border: 2px solid $btn-more-bg-active;
+      color: #000;
+      background: $btn-more-bg-active;
+    }
+    @media (max-width: $screen-xs) {
+      width: 100%;
+    }
+  }
+  @for $btn from 20 through 50 {
+    @if $btn % 2 == 0 {
+      &.btn-#{$btn} {
+        padding-left: $btn#{'px'};
+        padding-right: $btn#{'px'};
+      }
+    }
+  }
+}

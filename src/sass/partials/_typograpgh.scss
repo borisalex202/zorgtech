@@ -1,0 +1,92 @@
+img {
+  max-width: 100%;
+  height: auto;
+}
+a {
+  font-size: $font-size;
+  font-weight: 200;
+  color: $link-color;
+  text-decoration: underline;
+  @include transition($transition);
+
+  &:hover {
+    color: $link-hover-color;
+  }
+  &.link {
+    color: $link-hover-color;
+  }
+}
+p {
+  color: $text-color;
+  font-size: $font-size;
+  font-weight: 400;
+  line-height: 26px;
+}
+strong {
+  font-weight: 700;
+}
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+input,
+textarea,
+select {
+  width: 100%;
+  outline: none !important;
+  @include transition($transition);
+}
+select {
+  -webkit-appearance: none;
+}
+textarea {
+  resize: none;
+}
+button,
+input,
+textarea,
+a {
+  outline: none !important;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  font-weight: 700;
+}
+h1 {
+  font-size: 35px;
+}
+h2 {
+  font-size: 32px;
+}
+h3 {
+  font-size: 28px;
+}
+h4 {
+  font-size: 26px;
+}
+h5 {
+  font-size: 24px;
+}
+h6 {
+  font-size: 22px;
+}
+.text {
+  &-normal {
+    font-weight: 400;
+  }
+  &-semibold {
+    font-weight: 600;
+  }
+  &-bold {
+    font-weight: 700;
+  }
+  &-uppercase {
+    text-transform: uppercase;
+  }
+}

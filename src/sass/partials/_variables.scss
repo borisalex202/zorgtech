@@ -1,0 +1,53 @@
+/* Fonts */
+$font-family-base:             'Raleway', sans-serif;
+$font-size:                    17px;
+
+/* Animation */
+$transition:                   all .3s ease;
+
+/* Main */
+$main-color:                   #2AAADD;
+$second-color:                 #465C98;
+
+$text-color:                   #000;
+$text-gray:                    #444444;
+
+$border-color:                 #dcddde;
+
+/* Links */
+$link-color:                   #1eaae0;
+$link-hover-color:             #0bbdf7;
+
+$link-menu:                    #46ccff;
+$link-menu-hover:              #3ff3fe;
+
+$link-clear:                   rgba(76, 73, 95, 1);
+$link-clear-hover:             rgba(76, 73, 95, 0.72);
+
+/* Buttons */
+$btn-default-bg:               #2BABDD;
+$btn-default-bg-hover:         #3BC0F4;
+$btn-default-bg-active:        #2798C5;
+
+$btn-primary-bg:               #fff;
+$btn-primary-bg-hover:         #EDF0F4;
+$btn-primary-bg-active:        #E5EAEF;
+
+$btn-more-bg:                  transparent;
+$btn-more-bg-hover:        	   #BFC6C8;
+$btn-more-bg-active:       	   #A8ADAF;
+$btn-more-border:              #BDC4C6;
+
+// Radio, Checkbox
+$radio-icon:                   #18181C;
+$radio-border:                 #c8cbce;
+
+$checkbox-icon:                #18181C;
+$checkbox-border:              #c8cbce;
+
+// Background colors
+$bg-colors: (
+    white:                     #fff,
+    gray-light:                #fafafa,
+    gray:                      #F4F7F8
+);

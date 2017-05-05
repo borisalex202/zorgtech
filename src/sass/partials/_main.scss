@@ -16,6 +16,7 @@ body {
   min-height: 100%;
   position: relative;
   overflow: hidden;
+  padding-top: 80px;
 }
 .bg {
   @each $bg, $color in $bg-colors {

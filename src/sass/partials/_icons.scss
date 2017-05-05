@@ -11,4 +11,32 @@
       color: $main-color;
     }
   }
+  &-menu {
+    position: absolute;
+    top: 50%;
+    left: 25px;
+    padding: 0;
+    margin-top: -12px;
+    border: 0;
+    background: transparent;
+    border-radius: 0;
+
+    @media (min-width: $screen-md) {
+      display: none;
+    }
+    @media (max-width: $screen-xs-max) {
+      left: 20px;
+    }
+  }
+  &-bar {
+    display: block;
+    width: 29px;
+    height: 4px;
+    background: #fff;
+    border-radius: 2px;
+
+    &:not(:last-child) {
+      margin-bottom: 6px;
+    }
+  }
 }

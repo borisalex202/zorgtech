@@ -1,0 +1,60 @@
+.widget {
+  &-about {
+    padding: 145px 0;
+
+    ul {
+      margin: 50px 0;
+      padding-right: 30px;
+
+      li {
+        font-size: 15px;
+        line-height: 20px;
+        color: #585269;
+        @include flexbox();
+        @include align-items(center);
+
+        &:not(:last-child) {
+          margin-bottom: 27px;
+        }
+      }
+    }
+    .icon {
+      max-width: 50px;
+      margin-right: 20px;
+    }
+    @media (max-width: $screen-sm-max) {
+      padding: 85px 0 50px;
+
+      ul {
+        padding-right: 0;
+      }
+    }
+    @media (max-width: $screen-xs-max) {
+      padding: 55px 0 65px;
+      text-align: center;
+
+      ul {
+        margin-bottom: 30px;
+
+        li {
+          @include flex-wrap(wrap);
+          @include justify-content(center);
+        }
+      }
+      .icon {
+        margin-bottom: 15px;
+        margin-right: 0;
+      }
+    }
+  }
+  &-img {
+    position: relative;
+
+    img {
+      position: absolute;
+      top: -50px;
+      left: 0;
+      max-width: none;
+    }
+  }
+}

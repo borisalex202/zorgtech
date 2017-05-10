@@ -1,0 +1,51 @@
+.slider {
+  &-popular {
+    .slick {
+      &-list {
+        padding: 0 17px;
+        margin: 0 -34px;
+      }
+      &-slide {
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
+      &-dots {
+        margin-top: -30px;
+      }
+    }
+  }
+}
+.slick {
+  &-track {
+    @include flexbox();
+  }
+  &-slide {
+    height: auto;
+  }
+  &-dots {
+    text-align: center;
+
+    li {
+      margin: 0 4px;
+      display: inline-block;
+      vertical-align: top;
+
+      &.slick-active {
+        button {
+          @include opacity(1);
+        }
+      }
+      button {
+        width: 8px;
+        height: 8px;
+        padding: 0;
+        border: 0;
+        font-size: 0;
+        background: $dots-bg;
+        border-radius: 50%;
+        @include transition($transition);
+        @include opacity(.35);
+      }
+    }
+  }
+}

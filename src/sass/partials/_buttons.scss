@@ -30,17 +30,17 @@
   }
   &-primary {
     background: $btn-primary-bg;
-    color: #fff;
+    color: $text-purple;
 
     &:hover {
       background: $btn-primary-bg-hover;
-      color: #fff;
+      color: $text-purple;
     }
     &:focus,
     &:active,
     &:active:hover {
       background: $btn-primary-bg-active;
-      color: #fff;
+      color: $text-purple;
     }
   }
   &-more {

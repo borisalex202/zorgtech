@@ -11,9 +11,12 @@ $second-color:                 #465C98;
 
 $text-color:                   #000;
 $text-gray:                    #444444;
+$text-purple:                 #4C495F;
 
 $border-color:                 #dcddde;
 $border-color-product:         rgba(98,122,189,.12);
+
+$widget-title:                 #4C495F;
 
 /* Links */
 $link-color:                   #1eaae0;
@@ -50,5 +53,9 @@ $checkbox-border:              #c8cbce;
 $bg-colors: (
     white:                     #fff,
     gray-light:                #fafafa,
-    gray:                      #F4F7F8
+    gray:                      #F4F7F8,
+    footer:                    #19181C
 );
+
+// Slick
+$dots-bg:                      #c3c3c3;

@@ -1,8 +1,8 @@
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_variables";
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_mixins";
+@import "./partials/fonts";
 @import "./partials/variables";
 @import "./partials/mixins";
-@import "./partials/fonts";
 @import "./partials/typograpgh";
 @import "./partials/buttons";
 @import "./partials/icons";
@@ -13,3 +13,5 @@
 @import "./partials/slider";
 @import "./partials/products";
 @import "./partials/widget";
+@import "./partials/news";
+@import "./partials/project";

@@ -39,4 +39,30 @@
       margin-bottom: 6px;
     }
   }
+  &-callback {
+    max-width: 40px;
+    max-height: 43px;
+    color: #fff;
+  }
+  &-catalog,
+  &-ready-solutions {
+    max-width: 68px;
+    max-height: 62px;
+    color: #fff;
+  }
+  &-blog {
+    max-width: 105px;
+    max-height: 105px;
+    color: #1DB1EA;
+  }
+  &-refresh {
+    max-width: 35px;
+    max-height: 37px;
+    color: $main-color;
+  }
+  &-touch {
+    max-width: 24px;
+    max-height: 33px;
+    color: #1EAAE0;
+  }
 }

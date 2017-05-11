@@ -116,6 +116,7 @@
                   padding: 6px 5px;
                   color: #000;
                   font-size: 17px;
+                  font-weight: 400;
 
                   &:hover {
                     color: $main-color;
@@ -269,6 +270,13 @@
           margin: 0;
           color: #fff;
         }
+        .icon-logo {
+          max-width: 262px;
+          max-height: 47px;
+          position: relative;
+          left: -2px;
+          margin-bottom: 35px;
+        }
       }
       .menu-items {
         min-width: 140px;
@@ -356,6 +364,10 @@
   display: inline-block;
   margin-right: 60px;
 
+  .icon-logo {
+    position: relative;
+    left: -4px;
+  }
   @media (max-width: $screen-xs-max) {
     margin: 0 auto;
   }
@@ -407,6 +419,16 @@
         color: #fff;
         margin-bottom: 25px;
       }
+      .icon {
+        &-logo {
+          width: 100%;
+          max-width: 607px;
+          max-height: 100px;
+          margin-bottom: 40px;
+          position: relative;
+          left: -3px;
+        }
+      }
     }
     .anchors {
       position: absolute;
@@ -416,6 +438,7 @@
       background: rgba(3,3,6,.5);
 
       ul {
+        margin: 0 -15px;
         @include flexbox();
         @include justify-content(space-between);
 
@@ -726,7 +749,7 @@
     @include opacity(1);
   }
 }
-.achievement{
+.achievement {
   &-list {
     @include flexbox();
 
@@ -815,5 +838,144 @@
         padding: 65px 40px 65px 55px;
       }
     }
+  }
+}
+.toggle-sort {
+  border: 0;
+  background: transparent;
+  margin-left: 20px;
+  position: relative;
+  padding: 0 22px 0 0;
+
+  * {
+    @include transition($transition);
+  }
+  &.active {
+    .icon {
+      @include rotate(180deg);
+    }
+  }
+  &:hover {
+    span {
+      color: $link-hover-color;
+    }
+  }
+  span {
+    color: $main-color;
+    font-size: 16px;
+    line-height: 18px;
+    border-bottom: 2px dotted;
+  }
+  .icon {
+    position: absolute;
+    top: 3px;
+    right: 0;
+    max-width: 15px;
+    max-height: 15px;
+  }
+}
+.load-more {
+  text-align: center;
+  margin-top: 45px;
+
+  .btn {
+    font-weight: 500;
+    color: #737373;
+  }
+}
+.aside {
+  &-block {
+    padding: 45px 35px;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #F4F7F9;
+    }
+  }
+  &-title {
+    margin: 0 0 35px 0;
+    font-size: 22px;
+    color: $text-purple;
+  }
+}
+.checkbox,
+.radio {
+  display: block;
+  position: relative;
+  cursor: pointer;
+
+  &:not(:last-child) {
+    margin-bottom: 25px;
+  }
+  &.inline {
+    display: inline-block;
+    min-width: 110px;
+  }
+  input {
+    display: none;
+
+    &:checked ~ .icn:before {
+      pointer-events: all;
+      @include opacity(1);
+    }
+  }
+  .icn {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 2px;
+    background: #fff;
+    border: 1px solid $checkbox-border;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 12px;
+      height: 12px;
+      border-radius: 2px;
+      background: $checkbox-icon;
+      pointer-events: none;
+      @include transition($transition);
+      @include opacity(0);
+    }
+  }
+  .text {
+    display: block;
+    padding-left: 30px;
+  }
+}
+.radio {
+  .icn {
+    border-radius: 50%;
+
+    &:before {
+      border-radius: 50%;
+    }
+  }
+}
+.filter-block {
+  @media (max-width: $screen-md-max) {
+    position: fixed;
+    top: 80px;
+    bottom: 0;
+    overflow: auto;
+    left: -100%;
+    z-index: 101;
+    max-width: 350px !important;
+    pointer-events: none;
+    @include transition(all .5s ease);
+    @include transition-delay(.2s);
+
+    &.active {
+      pointer-events: all;
+      left: 0;
+    }
+  }
+  @media (max-width: $screen-xs-max) {
+    top: 0;
+    max-width: 100% !important;
   }
 }

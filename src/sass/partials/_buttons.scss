@@ -43,26 +43,62 @@
       color: $text-purple;
     }
   }
-  &-more {
-    min-width: 215px;
-    background: $btn-more-bg;
-    border: 2px solid $btn-more-border;
-    color: rgba(0,0,0,.5);
+  &-reset {
+    background: transparent;
+    color: $link-clear;
+    padding: 0;
+    font-weight: 500;
 
     &:hover {
-      border: 2px solid $btn-more-bg-hover;
-      background: $btn-more-bg-hover;
-      color: #000;
+      color: $link-clear-hover;
+
+      .icon {
+        color: $link-clear-hover;
+      }
+    }
+    span {
+      line-height: 13px;
+      border-bottom: 2px dotted;
+      display: inline-block;
+    }
+    .icon {
+      margin: 0 6px;
+      color: $link-clear;
+      position: relative;
+      top: 3px;
+    }
+  }
+  &-filter {
+    background: transparent;
+    color: $btn-default-bg;
+    border: 1px solid $btn-default-bg;
+
+    span {
+      position: relative;
+      padding-left: 22px;
+
+      &:before {
+        content: '';
+        width: 19px;
+        height: 19px;
+        position: absolute;
+        top: -3px;
+        left: -5px;
+        background: url('../img/svg/filter.svg') no-repeat;
+        background-size: cover;
+      }
+    }
+    &:hover {
+      background: transparent;
+      color: $btn-default-bg-hover;
+      border: 1px solid $btn-default-bg-hover;
     }
     &:focus,
     &:active,
     &:active:hover {
-      border: 2px solid $btn-more-bg-active;
-      color: #000;
-      background: $btn-more-bg-active;
-    }
-    @media (max-width: $screen-xs) {
-      width: 100%;
+      background: transparent;
+      color: $btn-default-bg-active;
+      border: 1px solid $btn-default-bg-active;
     }
   }
   @for $btn from 20 through 50 {

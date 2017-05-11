@@ -7,9 +7,7 @@ html, body {
 }
 body {
   &.no-scroll {
-    position: fixed;
-    left: 0;
-    right: 0;
+    overflow: hidden;
   }
 }
 .wrapper {
@@ -23,5 +21,128 @@ body {
     &-#{$bg} {
       background-color: $color;
     }
+  }
+}
+.content-page {
+  padding: 145px 0 90px;
+
+  &-title {
+    margin-bottom: 50px;
+    @include flexbox();
+    @include align-items(center);
+
+    h1 {
+      text-transform: uppercase;
+      margin: 0;
+    }
+    .selection-link {
+      margin-left: auto;
+    }
+    .result {
+      display: inline-block;
+      margin-left: 40px;
+      font-size: 16px;
+    }
+    @media (max-width: $screen-md-max) {
+      @include flex-wrap(wrap);
+      position: relative;
+
+      .btn-filter {
+        position: absolute;
+        bottom: -17px;
+        left: 0;
+      }
+      .bottom-nav {
+        width: 100%;
+        margin-top: 50px;
+        margin-bottom: -5px;
+        text-align: right;
+      }
+    }
+    @media (max-width: $screen-xs-max) {
+      @include flex-wrap(wrap);
+
+      .selection-link {
+        width: 100%;
+        text-align: center;
+        margin-top: 40px;
+        margin-bottom: -25px;
+        @include justify-content(flex-end);
+      }
+    }
+    @media (max-width: $screen-xs) {
+      h1 {
+        font-size: 28px;
+      }
+      .bottom-nav {
+        padding-top: 50px;
+        @include flexbox();
+      }
+      .btn-filter {
+        margin-bottom: 57px;
+        width: 100%;
+      }
+      .result {
+        margin-left: 0;
+        margin-right: auto;
+      }
+      .toggle-sort {
+        margin-left: auto;
+      }
+    }
+  }
+  &-container {
+    @include flexbox();
+    @include align-items(flex-start);
+  }
+  &-sidebar {
+    width: 100%;
+    max-width: 295px;
+    background: #fff;
+    margin-right: 25px;
+  }
+  &-primary {
+    width: 100%;
+    max-width: calc(100% - 320px);
+  }
+  @media (max-width: $screen-md-max) {
+    &-container {
+      position: relative;
+    }
+    &-primary {
+      max-width: 100%;
+    }
+  }
+  @media (max-width: $screen-sm-max) {
+    padding: 80px 0;
+  }
+  @media (max-width: $screen-xs-max) {
+    padding: 60px 0;
+  }
+}
+.selection-link {
+  font-weight: 500;
+  font-size: 13px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  @include inline-flex();
+  @include align-items(center);
+
+  span {
+    position: relative;
+    top: 1px;
+    line-height: 13px;
+    border-bottom: 1px solid;
+  }
+  &:hover {
+    text-decoration: none;
+  }
+  .icon {
+    max-width: 24px;
+    max-height: 20px;
+    margin-right: 10px;
   }
 }

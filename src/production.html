@@ -1,0 +1,75 @@
+@@include('templates/_head.html', {
+	"title": "Zorgtech - Продукция"
+})
+@@include('templates/_header.html')
+
+		<div class="content-page">
+			<div class="container">
+				<div class="content-page-title">
+					<h1>Продукция</h1>
+					<a href="selection.html" class="selection-link">
+						<svg class="icon icon-filter"><use xlink:href="#icon-filter"></use></svg>
+						<span>Подбор оборудования</span>
+					</a>
+				</div>
+				<div class="product-container">
+					<a href="#" class="product-category">
+						<div class="product-category-thumb">
+							<img src="img/product2.png" alt="">
+						</div>
+						<div class="product-category-content">
+							<p class="title">Напольные</p>
+							<button class="btn btn-primary">Подробнее</button>
+						</div>
+					</a>
+					<a href="#" class="product-category">
+						<div class="product-category-thumb">
+							<img src="img/product11.png" alt="">
+						</div>
+						<div class="product-category-content">
+							<p class="title">Настенные</p>
+							<button class="btn btn-primary">Подробнее</button>
+						</div>
+					</a>
+					<a href="#" class="product-category">
+						<div class="product-category-thumb">
+							<img src="img/product12.png" alt="">
+						</div>
+						<div class="product-category-content">
+							<p class="title">Столы</p>
+							<button class="btn btn-primary">Подробнее</button>
+						</div>
+					</a>
+					<a href="#" class="product-category">
+						<div class="product-category-thumb">
+							<img src="img/product3.png" alt="">
+						</div>
+						<div class="product-category-content">
+							<p class="title">Уличные</p>
+							<button class="btn btn-primary">Подробнее</button>
+						</div>
+					</a>
+					<a href="#" class="product-category">
+						<div class="product-category-thumb">
+							<img src="img/product10.png" alt="">
+						</div>
+						<div class="product-category-content">
+							<p class="title">Отраслевые</p>
+							<button class="btn btn-primary">Подробнее</button>
+						</div>
+					</a>
+					<a href="selection.html" class="product-category">
+						<div class="product-category-content full">
+							<button class="selection-link">
+								<svg class="icon icon-filter"><use xlink:href="#icon-filter"></use></svg>
+								<span>Подбор оборудования</span>
+							</button>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+		@@include('./templates/_widget_begin.html')
+
+@@include('templates/_footer.html')
+@@include('templates/_end.html')

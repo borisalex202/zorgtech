@@ -1,0 +1,236 @@
+@@include('templates/_head.html', {
+	"title": "Zorgtech - Подбор оборудования"
+})
+@@include('templates/_header.html')
+
+		<div class="content-page bg-gray">
+			<div class="container">
+				<div class="content-page-title">
+					<h1>Подбор оборудования</h1>
+					<button class="btn btn-filter toggle-filter hidden-lg">
+						<span>Фильтр</span>
+					</button>
+					<div class="bottom-nav">
+						<span class="result">250 вариантов</span>
+						<button class="toggle-sort" data-toggle="sort" data-up="Сначала дороже" data-down="Сначала дешевле">
+							<span>Сначала дешевле</span>
+							<img src="img/svg/arrow_blue_down.svg" alt="" class="icon">
+						</button>
+					</div>
+				</div>
+				<div class="content-page-container">
+					<div class="content-page-sidebar filter-block">
+						<button class="icon icon-close"></button>
+						<form action="">
+							<aside class="aside-block">
+								<h3 class="aside-title hidden-lg">Фильтр</h3>
+								<h3 class="aside-title">Тип</h3>
+								<label class="checkbox">
+									<input type="checkbox" name="type">
+									<span class="icn"></span>
+									<span class="text">Все</span>
+								</label>
+								<label class="checkbox">
+									<input type="checkbox" name="type">
+									<span class="icn"></span>
+									<span class="text">Напольные</span>
+								</label>
+								<label class="checkbox">
+									<input type="checkbox" name="type">
+									<span class="icn"></span>
+									<span class="text">Настенные</span>
+								</label>
+								<label class="checkbox">
+									<input type="checkbox" name="type">
+									<span class="icn"></span>
+									<span class="text">Столы</span>
+								</label>
+								<label class="checkbox">
+									<input type="checkbox" name="type">
+									<span class="icn"></span>
+									<span class="text">Уличные</span>
+								</label>
+								<label class="checkbox">
+									<input type="checkbox" name="type">
+									<span class="icn"></span>
+									<span class="text">Отраслевые</span>
+								</label>
+							</aside>
+							<aside class="aside-block">
+								<h3 class="aside-title">Диагональ</h3>
+								<label class="checkbox inline">
+									<input type="checkbox" name="diagonal">
+									<span class="icn"></span>
+									<span class="text">Все</span>
+								</label>
+								<label class="checkbox inline">
+									<input type="checkbox" name="diagonal">
+									<span class="icn"></span>
+									<span class="text">43"</span>
+								</label>
+								<label class="checkbox inline">
+									<input type="checkbox" name="diagonal">
+									<span class="icn"></span>
+									<span class="text">22"</span>
+								</label>
+								<label class="checkbox inline">
+									<input type="checkbox" name="diagonal">
+									<span class="icn"></span>
+									<span class="text">55"</span>
+								</label>
+								<label class="checkbox inline">
+									<input type="checkbox" name="diagonal">
+									<span class="icn"></span>
+									<span class="text">32"</span>
+								</label>
+							</aside>
+							<aside class="aside-block">
+								<h3 class="aside-title">Ценовой диапазон</h3>
+								<div class="form-group price">
+									<input type="text" placeholder="от 100 000 р.">
+									<input type="text" placeholder="до 350 000 р.">
+								</div>
+								<div class="form-btn">
+									<input type="submit" value="Подобрать" class="btn btn-default">
+									<button type="reset" class="btn btn-reset">
+										<svg class="icon icon-reset"><use xlink:href="#icon-reset"></use></svg>
+										<span>Очистить фильтр</span>
+									</button>
+								</div>
+							</aside>
+						</form>
+					</div>
+					<div class="content-page-primary">
+						<div class="product-container catalog">
+							<a href="#" class="product item">
+								<div class="product-thumb">
+									<img src="img/product7.png" alt="">
+								</div>
+								<div class="product-content">
+									<p class="product-name">Eco Kid</p>
+									<p class="product-desc">Android, Intel Celeron,<br> Intel Core i3-i7</p>
+									<span class="product-price">от <strong>76 000</strong> р.</span>
+								</div>
+							</a>
+							<a href="#" class="product item">
+								<div class="product-thumb">
+									<img src="img/product8.png" alt="">
+								</div>
+								<div class="product-content">
+									<p class="product-name">Diamant 32" Multitouch</p>
+									<p class="product-desc">Android, Intel Celeron,<br> Intel Core i3-i7</p>
+									<span class="product-price">от <strong>94 800</strong> р.</span>
+								</div>
+							</a>
+							<a href="#" class="product item">
+								<div class="product-thumb">
+									<img src="img/product9.png" alt="">
+								</div>
+								<div class="product-content">
+									<p class="product-name">Mono</p>
+									<p class="product-desc">Android, Intel Celeron,<br> Intel Core i3-i7</p>
+									<span class="product-price">от <strong>116 000</strong> р.</span>
+								</div>
+							</a>
+							<a href="#" class="product item">
+								<div class="product-thumb">
+									<img src="img/product8.png" alt="">
+								</div>
+								<div class="product-content">
+									<p class="product-name">Diamant 32" Multitouch</p>
+									<p class="product-desc">Android, Intel Celeron,<br> Intel Core i3-i7</p>
+									<span class="product-price">от <strong>94 800</strong> р.</span>
+								</div>
+							</a>
+							<a href="#" class="product item">
+								<div class="product-thumb">
+									<img src="img/product9.png" alt="">
+								</div>
+								<div class="product-content">
+									<p class="product-name">Mono</p>
+									<p class="product-desc">Android, Intel Celeron,<br> Intel Core i3-i7</p>
+									<span class="product-price">от <strong>116 000</strong> р.</span>
+								</div>
+							</a>
+							<a href="#" class="product item">
+								<div class="product-thumb">
+									<img src="img/product7.png" alt="">
+								</div>
+								<div class="product-content">
+									<p class="product-name">Eco Kid</p>
+									<p class="product-desc">Android, Intel Celeron,<br> Intel Core i3-i7</p>
+									<span class="product-price">от <strong>76 000</strong> р.</span>
+								</div>
+							</a>
+							<a href="#" class="product item">
+								<div class="product-thumb">
+									<img src="img/product7.png" alt="">
+								</div>
+								<div class="product-content">
+									<p class="product-name">Eco Kid</p>
+									<p class="product-desc">Android, Intel Celeron,<br> Intel Core i3-i7</p>
+									<span class="product-price">от <strong>76 000</strong> р.</span>
+								</div>
+							</a>
+							<a href="#" class="product item">
+								<div class="product-thumb">
+									<img src="img/product8.png" alt="">
+								</div>
+								<div class="product-content">
+									<p class="product-name">Diamant 32" Multitouch</p>
+									<p class="product-desc">Android, Intel Celeron,<br> Intel Core i3-i7</p>
+									<span class="product-price">от <strong>94 800</strong> р.</span>
+								</div>
+							</a>
+							<a href="#" class="product item">
+								<div class="product-thumb">
+									<img src="img/product9.png" alt="">
+								</div>
+								<div class="product-content">
+									<p class="product-name">Mono</p>
+									<p class="product-desc">Android, Intel Celeron,<br> Intel Core i3-i7</p>
+									<span class="product-price">от <strong>116 000</strong> р.</span>
+								</div>
+							</a>
+							<a href="#" class="product item">
+								<div class="product-thumb">
+									<img src="img/product8.png" alt="">
+								</div>
+								<div class="product-content">
+									<p class="product-name">Diamant 32" Multitouch</p>
+									<p class="product-desc">Android, Intel Celeron,<br> Intel Core i3-i7</p>
+									<span class="product-price">от <strong>94 800</strong> р.</span>
+								</div>
+							</a>
+							<a href="#" class="product item">
+								<div class="product-thumb">
+									<img src="img/product9.png" alt="">
+								</div>
+								<div class="product-content">
+									<p class="product-name">Mono</p>
+									<p class="product-desc">Android, Intel Celeron,<br> Intel Core i3-i7</p>
+									<span class="product-price">от <strong>116 000</strong> р.</span>
+								</div>
+							</a>
+							<a href="#" class="product item">
+								<div class="product-thumb">
+									<img src="img/product7.png" alt="">
+								</div>
+								<div class="product-content">
+									<p class="product-name">Eco Kid</p>
+									<p class="product-desc">Android, Intel Celeron,<br> Intel Core i3-i7</p>
+									<span class="product-price">от <strong>76 000</strong> р.</span>
+								</div>
+							</a>
+						</div>
+						<div class="load-more">
+							<button class="btn btn-primary">Показать еще</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		@@include('./templates/_widget_begin.html')
+
+@@include('templates/_footer.html')
+@@include('templates/_end.html')

@@ -23,6 +23,13 @@
     .icon {
       max-width: 50px;
       margin-right: 20px;
+
+      &-logo {
+        max-width: 262px;
+        max-height: 47px;
+        position: relative;
+        left: -2px;
+      }
     }
     @media (max-width: $screen-sm-max) {
       padding: 85px 0 50px;
@@ -41,6 +48,10 @@
         li {
           @include flex-wrap(wrap);
           @include justify-content(center);
+
+          .icon {
+            width: 100%;
+          }
         }
       }
       .icon {

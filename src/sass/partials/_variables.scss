@@ -18,6 +18,10 @@ $border-color-product:         rgba(98,122,189,.12);
 
 $widget-title:                 #4C495F;
 
+$table-tr-odd:                 #f5f9fc;
+$table-tr-even:                rgba(#f5f9fc, .46);
+$table-tr-border:              #fff;
+
 /* Links */
 $link-color:                   #1eaae0;
 $link-hover-color:             #0bbdf7;
@@ -54,7 +58,8 @@ $bg-colors: (
     white:                     #fff,
     gray-light:                #fafafa,
     gray:                      #F4F7F8,
-    footer:                    #19181C
+    footer:                    #19181C,
+    aqua:                      #e9f1f6
 );
 
 // Slick

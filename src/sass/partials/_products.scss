@@ -1,10 +1,14 @@
 .product {
   text-decoration: none !important;
   display: block;
-  width: 25%;
+  width: calc(25% - 34px);
   background: #fff;
   margin: 34px 17px 0;
+  overflow: hidden;
+  @include flexbox();
+  @include flex-wrap(wrap);
   @include transition($transition);
+  @include scale(1);
 
   &:hover {
     @include box-shadow(0 0 57px 0 rgba(80, 87, 92, .14));
@@ -90,7 +94,12 @@
           background: #EDF0F4;
 
           &:hover {
-            background: $btn-primary-bg-active;
+            background: #d4d9e1;
+          }
+          &:focus,
+          &:active,
+          &:active:hover {
+            background: #c9cdd3;
           }
         }
       }
@@ -239,7 +248,37 @@
       }
     }
   }
+  &.selection {
+    padding: 30px;
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(center);
+
+    .selection-link {
+      @include flex-wrap(wrap);
+      @include justify-content(center);
+
+      .icon {
+        width: 100%;
+        margin: 0 auto 20px;
+        max-width: 40px;
+        max-height: 35px;
+      }
+      span {
+        text-align: center;
+        font-size: 18px;
+        line-height: 30px;
+        font-weight: 500;
+        border-bottom: 0;
+        text-decoration: underline;
+      }
+    }
+  }
+  &.scale {
+    @include scale(0);
+  }
   &-container {
+    width: calc(100% + 34px);
     margin: -34px -17px 0;
     @include flexbox();
     @include flex-wrap(wrap);
@@ -250,6 +289,23 @@
       .product {
         width: calc(33.3333% - 20px);
         margin: 20px 10px 0;
+      }
+    }
+    &.loading {
+      position: relative;
+
+      &:before {
+        content: 'Сортировка…';
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: map_get($bg-colors, gray);
+        z-index: 100;
+        padding: 200px 0;
+        @include flexbox();
+        @include justify-content(center);
       }
     }
     &-mini {
@@ -302,6 +358,7 @@
   }
   &-content {
     padding: 35px 40px;
+    margin-top: auto;
   }
   &-mini {
     border-bottom: 1px solid $border-color-product;
@@ -372,6 +429,66 @@
         color: $text-purple;
       }
     }
+    &.mini {
+      width: calc(20% - 30px);
+      min-height: 280px;
+      padding: 40px 20px;
+      @include flex-wrap(wrap);
+
+      &:hover {
+        background: rgba(map_get($bg-colors, gray), .42);
+        @include box-shadow(none);
+
+        .product-category {
+          &-content {
+            .title {
+              color: $main-color;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+      &.active {
+        @include opacity(.42);
+        pointer-events: none;
+
+        &:hover {
+          background: map_get($bg-colors, gray);
+        }
+      }
+      .product-category {
+        &-thumb {
+          width: 100%;
+          min-height: 150px;
+          margin-bottom: 20px;
+
+          img {
+            max-width: 100%;
+            max-height: 135px;
+            margin: 0 auto;
+          }
+        }
+        &-content {
+          width: 100%;
+
+          .title {
+            font-size: 20px;
+            line-height: 24px;
+            margin: 0;
+            @include transition($transition);
+          }
+        }
+      }
+      @media (max-width: $screen-md-max) {
+        width: calc(33.3333% - 30px);
+      }
+      @media (max-width: $screen-xs-max) {
+        width: calc(50% - 30px);
+      }
+      @media (max-width: $screen-xs) {
+        width: calc(100% - 30px);
+      }
+    }
     &-thumb {
       width: 40%;
       text-align: center;
@@ -426,7 +543,216 @@
       }
     }
   }
+  &-detail {
+    &-thumb {
+      margin-left: -40px;
+      margin-right: 40px;
+      padding-right: 60px;
+
+      @media (max-width: $screen-md-max) {
+        padding-right: 0;
+      }
+      @media (max-width: $screen-sm-max) {
+        margin-left: 0;
+        margin-right: 0;
+        padding-right: 40px;
+      }
+      @media (max-width: $screen-sm-max) {
+        margin-top: 15px;
+        padding-right: 15px;
+
+        img {
+          max-width: 190px;
+          margin: 0 auto;
+        }
+      }
+    }
+    &-info {
+      .order {
+        margin-top: 30px;
+        font-size: 15px;
+        min-width: 165px;
+        letter-spacing: 1px;
+      }
+      @media (max-width: $screen-xs-max) {
+        .swap-xs {
+          @include flexbox();
+          @include flex-wrap(wrap-reverse);
+          @include flex-direction(row-reverse);
+          @include justify-content(center);
+        }
+        .order {
+          margin-top: 15px;
+          margin-bottom: 50px;
+        }
+      }
+    }
+    &-description {
+      padding: 100px 0 110px;
+
+      &.widget {
+        padding: 100px 0 110px;
+      }
+      .product {
+        &-title {
+          font-size: 45px;
+          font-weight: 400;
+          line-height: 60px;
+          color: $text-purple;
+          margin-bottom: 35px;
+        }
+        &-description {
+          margin-bottom: 90px;
+
+          p {
+            font-size: 17px;
+            line-height: 31px;
+            font-weight: 300;
+            margin-bottom: 20px;
+          }
+        }
+      }
+      .toggle-sort {
+        margin-left: 0;
+        margin-top: 35px;
+      }
+      @media (max-width: $screen-sm-max) {
+        padding: 80px 0;
+
+        &.widget {
+          padding: 80px 0;
+        }
+      }
+      @media (max-width: $screen-xs-max) {
+        padding: 60px 0;
+
+        &.widget {
+          padding: 60px 0;
+        }
+        .product {
+          &-title {
+            font-size: 35px;
+            line-height: 43px;
+            margin-bottom: 30px;
+          }
+          &-description {
+            p {
+              font-size: 15px;
+              line-height: 24px;
+            }
+          }
+        }
+      }
+    }
+    .product {
+      &-name {
+        font-size: 55px;
+        line-height: 68px;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: $text-purple;
+        margin-bottom: 20px;
+      }
+      &-price {
+        font-size: 45px;
+        line-height: 45px;
+        font-weight: 400;
+        color: $main-color;
+        margin-bottom: 25px;
+      }
+      &-include {
+        font-size: 15px;
+        font-weight: 300;
+        color: #a7a4b8;
+        line-height: 20px;
+
+        span {
+          color: $text-purple;
+          display: block;
+        }
+      }
+      &-advantages {
+        margin-top: 45px;
+        padding-top: 45px;
+        border-top: 1px solid #d1dbe1;
+
+        li {
+          position: relative;
+          padding-left: 55px;
+          font-size: 18px;
+          font-weight: 300;
+
+          &:not(:last-child) {
+            margin-bottom: 40px;
+          }
+          .icon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            max-width: 29px;
+            max-height: 35px;
+          }
+        }
+      }
+      @media (max-width: $screen-sm-max) {
+        &-name {
+          font-size: 30px;
+          line-height: 38px;
+          margin-bottom: 0;
+        }
+        &-price {
+          font-size: 22px;
+          line-height: 22px;
+          margin-bottom: 25px;
+        }
+        &-include {
+          font-size: 18px;
+          font-weight: 300;
+          line-height: 22px;
+          margin-bottom: 0;
+        }
+        &-advantages {
+          border-top: 0;
+          padding-top: 0;
+
+          li {
+            padding-left: 50px;
+            font-size: 15px;
+
+            &:not(:last-child) {
+              margin-bottom: 30px;
+            }
+          }
+        }
+      }
+      @media (max-width: $screen-xs-max) {
+        &-include {
+          width: 100%;
+        }
+        &-advantages {
+          li {
+            padding-left: 0;
+            padding-top: 45px;
+
+            .icon {
+              max-width: 40px;
+              max-height: 35px;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: $screen-md-max) {
+    width: calc(33.3333% - 34px);
+  }
+  @media (max-width: $screen-sm-max) {
+    width: calc(50% - 34px);
+  }
   @media (max-width: $screen-xs-max) {
+    width: calc(100% - 34px);
+    min-height: 400px;
+
     &-mini {
       text-align: center;
       min-height: 300px;

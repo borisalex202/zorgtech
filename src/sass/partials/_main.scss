@@ -43,6 +43,11 @@ body {
       margin-left: 40px;
       font-size: 16px;
     }
+    .bottom-nav {
+      &.right {
+        margin-left: auto;
+      }
+    }
     @media (max-width: $screen-md-max) {
       @include flex-wrap(wrap);
       position: relative;
@@ -114,10 +119,10 @@ body {
     }
   }
   @media (max-width: $screen-sm-max) {
-    padding: 80px 0;
+    padding: 60px 0;
   }
   @media (max-width: $screen-xs-max) {
-    padding: 60px 0;
+    padding: 40px 0;
   }
 }
 .selection-link {

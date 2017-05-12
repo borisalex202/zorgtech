@@ -15,7 +15,8 @@
         toggleSort: $('[data-toggle="sort"]'),
         toggleFilter: $('.toggle-filter'),
         filter: $('.filter-block'),
-        close: $('.icon-close')
+        close: $('.icon-close'),
+        tableFlex: $('.table-flex.mini')
     };
     var options = {
         hoverDelay: 300,
@@ -29,7 +30,7 @@
 
     $(window).on('load resize', function () {
         options.siteHeaderHeight = elements.siteHeader.outerHeight();
-        options.documentWidth = $(document).width()
+        options.documentWidth = $(document).width();
     });
 
     elements.iconMenu.on('click', function () {
@@ -116,6 +117,13 @@
         showMainScroll();
     });
     $('[type="tel"]').mask("+7(999)999-99-99");
+
+    elements.tableFlex.find('.table-flex__tr:nth-child(n+8)').addClass('tr_hidden');
+    $('.toggle-table').on('click', function () {
+        elements.tableFlex.find('.tr_hidden').slideToggle(300, function() {
+            if ($(this).css('display') == 'block') $(this).css('display', 'flex');
+        });
+    });
 
 
 

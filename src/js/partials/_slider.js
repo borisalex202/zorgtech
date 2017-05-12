@@ -29,4 +29,29 @@ $(window).on('load', function () {
             }
         ]
     });
+    $('.slider-product-main').slick({
+        arrows: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        fade: true,
+        dots: false,
+        asNavFor: '.slider-product-nav',
+        responsive: [
+            {
+                breakpoint: 991,
+                settings: {
+                    dots: true
+                }
+            }
+        ]
+    });
+    $('.slider-product-nav').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        asNavFor: '.slider-product-main',
+        dots: false,
+        arrows: true,
+        centerMode: true,
+        focusOnSelect: true
+    });
 });

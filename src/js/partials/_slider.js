@@ -54,4 +54,36 @@ $(window).on('load', function () {
         centerMode: true,
         focusOnSelect: true
     });
+    $('.slider-product-gallery').slick({
+        arrows: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        fade: true,
+        dots: false
+    });
+    $('.product-gallery-item').on('click', function () {
+        var goTo = $(this).data('go-to');
+
+        $('.slider-product-gallery').slick('slickGoTo', goTo);
+        setTimeout(function () {
+            $('.slider-product-gallery').slick('setPosition');
+        }, 300);
+    });
+});
+$(window).on('load resize', function () {
+    if(options.documentWidth < grid.md) {
+        if (!$('.product-gallery-container').hasClass('slick-initialized')) {
+            $('.product-gallery-container').slick({
+                arrows: false,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                fade: true,
+                dots: true
+            })
+        }
+    } else {
+        if ($('.product-gallery-container').hasClass('slick-initialized')) {
+            $('.product-gallery-container').slick('unslick');
+        }
+    }
 });

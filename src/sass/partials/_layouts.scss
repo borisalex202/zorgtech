@@ -1226,6 +1226,21 @@
     }
   }
   &-doc {
+    &.white {
+      li {
+        background: url('../img/svg/document_white.svg') 0 2px no-repeat;
+        background-size: 20px;
+        line-height: 27px;
+
+        a {
+          color: #fff;
+
+          &:hover {
+            color: $link-hover-color;
+          }
+        }
+      }
+    }
     li {
       margin-bottom: 20px;
       padding-left: 30px;

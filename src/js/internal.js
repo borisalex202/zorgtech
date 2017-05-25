@@ -97,6 +97,10 @@
                     $('html, body').animate({
                         scrollTop: target.offset().top - 54
                     }, options.smoothScroll);
+                } else if ($('.wrapper').hasClass('nav-tab')){
+                    $('html, body').animate({
+                        scrollTop: target.offset().top - $('.anchor-fixed').outerHeight()
+                    }, options.smoothScroll);
                 } else {
                     $('html, body').animate({
                         scrollTop: target.offset().top
@@ -130,10 +134,39 @@
     $('[type="tel"]').mask("+7(999)999-99-99");
 
     elements.tableFlex.find('.table-flex__tr:nth-child(n+8)').addClass('tr_hidden');
-    $('.toggle-table').on('click', function () {
-        elements.tableFlex.find('.tr_hidden').slideToggle(300, function() {
-            if ($(this).css('display') == 'block') $(this).css('display', 'flex');
+    $('.table-flex__tr.tr_hidden').each(function () {
+        $(this).data('height', $(this).outerHeight()).css({
+            maxHeight: 0,
+            paddingTop: 0,
+            paddingBottom: 0,
+            borderWidth: 0
         });
+    });
+    var showTr = 0;
+    $('.toggle-table').on('click', function () {
+        if(showTr === 0) {
+            elements.tableFlex.find('.tr_hidden').each(function () {
+                var height = $(this).data('height');
+                console.log(height);
+               $(this).css({
+                    maxHeight: height,
+                    paddingTop: (options.documentWidth > grid.md ? 25 : 20),
+                    paddingBottom: (options.documentWidth > grid.md ? 25 : 20),
+                    borderWidth: 1
+                });
+            });
+            showTr = 1;
+        } else {
+            elements.tableFlex.find('.tr_hidden').each(function () {
+                $(this).css({
+                    maxHeight: 0,
+                    paddingTop: 0,
+                    paddingBottom: 0,
+                    borderWidth: 0
+                });
+            });
+            showTr = 0;
+        }
     });
 
     $('input, textarea')

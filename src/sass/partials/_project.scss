@@ -2,6 +2,12 @@
   &-container {
     @include flexbox();
     @include flex-wrap(wrap);
+
+    &-items {
+      margin: -30px -15px 0;
+      @include flexbox();
+      @include flex-wrap(wrap);
+    }
   }
   &-content {
     width: 50%;
@@ -48,6 +54,214 @@
       }
     }
   }
+  &-item {
+    text-decoration: none;
+    min-height: 440px;
+    width: calc(50% - 30px);
+    margin: 30px 15px 0;
+    position: relative;
+    overflow: hidden;
+    background: map_get($bg-colors, project);
+
+    &:hover {
+      .project {
+        &-title {
+          &.top {
+            top: 45px;
+          }
+          &.bottom {
+            top: 100%;
+          }
+        }
+        &-read {
+          padding: 20px 50px 20px 25px;
+
+          span {
+            margin-right: 0;
+            right: 0;
+            @include opacity(1);
+          }
+        }
+      }
+      .thumb {
+        @include scale(1.1);
+      }
+    }
+    .thumb {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      z-index: 2;
+      pointer-events: none;
+      @include transition(all .7s ease);
+      @include scale(1);
+      @include opacity(.55);
+    }
+    .info {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 3;
+      height: 100%;
+      width: 100%;
+      padding: 45px;
+      @include flexbox();
+      @include flex-wrap(wrap);
+      @include align-items(center);
+      @include transition($transition);
+    }
+  }
+  &-title {
+    font-size: 32px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 43px;
+    position: relative;
+    top: 0;
+    @include transition($transition);
+
+    &.top {
+      position: absolute;
+      top: -100%;
+      left: 45px;
+      right: 45px;
+      font-size: 22px;
+      line-height: 30px;
+    }
+  }
+  &-read {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 4;
+    height: 55px;
+    min-width: 55px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 400;
+    text-transform: uppercase;
+    background: $main-color;
+    padding: 20px 25px 20px 25px;
+    @include transition($transition);
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 9px;
+      height: 17px;
+      z-index: 5;
+      background: url('../img/svg/arrow_white.svg') no-repeat;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 35px;
+      height: 55px;
+      z-index: 4;
+      background: $main-color;
+    }
+    span {
+      margin-right: -100px;
+      position: relative;
+      right: -50px;
+      @include transition($transition);
+      @include opacity(0);
+    }
+  }
+  &-used {
+    margin-top: 80px;
+
+    .item {
+      margin-top: 45px;
+      @include flexbox();
+      @include align-items(center);
+
+      &:not(:first-of-type) {
+        padding-top: 45px;
+        border-top: 1px solid #f0f0f0;
+      }
+    }
+    .thumb {
+      padding-right: 80px;
+
+      img {
+        max-width: 175px;
+      }
+    }
+    .info {
+      .title {
+        font-weight: 400;
+        font-size: 17px;
+        margin-bottom: 5px;
+        color: $text-purple;
+      }
+      .desc {
+        font-size: 15px;
+        font-weight: 300;
+        margin-bottom: 20px;
+        color: #5c5971;
+      }
+      .price {
+        font-size: 15px;
+        color: $text-purple;
+      }
+    }
+    .button {
+      margin-left: auto;
+    }
+    .btn {
+      letter-spacing: 1px;
+      font-weight: 400;
+    }
+    @media (max-width: $screen-sm-max) {
+      .info {
+        .title {
+          font-size: 20px;
+          margin-bottom: 10px;
+        }
+        .desc {
+          font-size: 18px;
+        }
+        .price {
+          font-size: 20px;
+        }
+      }
+      .btn {
+        font-size: 15px;
+      }
+    }
+    @media (max-width: $screen-xs-max) {
+      margin-top: 40px;
+
+      .item {
+        text-align: center;
+        @include flex-wrap(wrap);
+      }
+      .thumb {
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 20px;
+      }
+      .info {
+        width: 100%;
+      }
+      .button {
+        margin-top: 20px;
+        width: 100%;
+      }
+    }
+  }
   @media (max-width: $screen-sm-max) {
     &-content {
       padding: 90px 30px;
@@ -80,6 +294,17 @@
         width: 100%;
       }
     }
+    &-item {
+      min-height: 340px;
+
+      .info {
+        padding: 25px;
+      }
+    }
+    &-title {
+      font-size: 25px;
+      line-height: 30px;
+    }
   }
   @media (max-width: $screen-xs-max) {
     &-thumb {
@@ -104,6 +329,13 @@
           margin: 30px auto;
         }
       }
+    }
+    &-item {
+      width: calc(100% - 30px);
+    }
+    &-title {
+      font-size: 20px;
+      line-height: 26px;
     }
   }
 }

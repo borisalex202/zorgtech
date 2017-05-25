@@ -51,7 +51,7 @@
     left: 0;
     color: #323139;
     pointer-events: none;
-    @include transition($transition);
+    @include transition(all .5s ease);
   }
   &-control {
     border: 0;

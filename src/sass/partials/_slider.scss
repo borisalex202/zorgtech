@@ -16,15 +16,28 @@
   }
   &-product {
     &-main {
+      width: 100%;
+      max-height: 450px;
+      padding: 0 0 0 25px;
+
       .slick {
         &-dots {
           position: relative;
-          top: -20px;
+          margin: 10px 0 20px;
         }
+        &-slide {
+          img {
+            margin: 0 auto;
+          }
+        }
+      }
+      @media (max-width: $screen-sm-max) {
+        padding: 0;
       }
     }
     &-nav {
-      margin-top: 30px;
+      width: 100%;
+      margin-top: auto;
 
       .slick {
         &-list {
@@ -70,8 +83,8 @@
     }
     .slick {
       &-arrow {
-        width: 60px;
-        height: 60px;
+        width: 55px;
+        height: 55px;
       }
       &-prev {
         left: 20px;
@@ -97,6 +110,134 @@
           width: 30px;
           height: 30px;
         }
+      }
+    }
+  }
+  &-detail {
+    margin-bottom: 50px;
+  }
+  &-team {
+    .slick {
+      &-list {
+        margin: 0 -20px;
+      }
+    }
+  }
+  &-production {
+    margin-bottom: 80px;
+
+    .slick {
+      &-slide {
+        position: relative;
+      }
+      &-arrow {
+        width: 50px;
+        height: 50px;
+        top: 50px;
+      }
+      &-next {
+        right: 50px;
+      }
+      &-prev {
+        left: inherit;
+        right: 125px;
+      }
+    }
+    .description {
+      padding: 25px 150px 25px 50px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(#585858, .88);
+
+      .name {
+        display: block;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 34px;
+        text-transform: uppercase;
+      }
+      p {
+        font-size: 22px;
+        font-weight: 300;
+        line-height: 34px;
+        color: #fff;
+        margin-top: 5px;
+        margin-bottom: 0;
+      }
+    }
+    @media (max-width: $screen-sm-max) {
+      margin-bottom: 60px;
+
+      .slick {
+        &-next {
+          right: 25px;
+        }
+        &-prev {
+          right: 75px;
+        }
+        &-arrow {
+          width: 40px;
+          height: 40px;
+        }
+      }
+      .description {
+        padding: 25px 50px 25px 25px;
+
+        p {
+          font-size: 18px;
+          line-height: 26px;
+        }
+      }
+    }
+    @media (max-width: $screen-xs-max) {
+      margin-bottom: 40px;
+
+      .slick {
+        &-next {
+          right: 15px;
+        }
+        &-prev {
+          right: 65px;
+        }
+        &-arrow {
+          width: 40px;
+          height: 40px;
+          top: inherit;
+          bottom: 15px;
+        }
+      }
+      .description {
+        position: static;
+        padding: 25px;
+
+        .name {
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+  &-logos {
+    margin-top: 50px;
+    margin-bottom: -50px;
+
+    .slick {
+      &-track {
+        @include align-items(center);
+      }
+    }
+    img {
+      margin: 0 auto;
+      @include transition($transition);
+      @include grayscale('on', 1);
+      @include opacity(.52);
+
+      &:hover {
+        @include grayscale('on', 0);
+        @include opacity(1);
       }
     }
   }
@@ -162,6 +303,56 @@
   &-next {
     right: -20px;
     background-image: url('../img/svg/arrow_rght.svg');
+  }
+  &-slider {
+    &.standard {
+      .slick {
+        &-dots {
+          position: absolute;
+          bottom: 20px;
+
+          li {
+            button {
+              background: #fff;
+            }
+          }
+        }
+        &-slide {
+          max-height: 490px;
+
+          img {
+            min-width: 100%;
+            max-width: none;
+            min-height: 490px;
+            max-height: 600px;
+          }
+        }
+        &-arrow {
+          width: 50px;
+          height: 50px;
+        }
+        &-prev {
+          left: 30px;
+        }
+        &-next {
+          right: 30px;
+        }
+      }
+      @media (max-width: $screen-sm-max) {
+        .slick {
+          &-arrow {
+            width: 30px;
+            height: 30px;
+          }
+          &-prev {
+            left: 10px;
+          }
+          &-next {
+            right: 10px;
+          }
+        }
+      }
+    }
   }
 }
 .item {

@@ -546,12 +546,13 @@
   }
   &-detail {
     &-thumb {
-      margin-left: -40px;
-      margin-right: 40px;
-      padding-right: 60px;
-
+      padding-right: 100px;
+      padding-left: 5px;
+      @include flexbox();
+      @include flex-wrap(wrap);
       @media (max-width: $screen-md-max) {
-        padding-right: 0;
+        padding-right: 15px;
+        padding-left: 15px;
       }
       @media (max-width: $screen-sm-max) {
         margin-left: 0;
@@ -569,11 +570,16 @@
       }
     }
     &-info {
+      padding-left: 60px;
+
       .order {
         margin-top: 30px;
         font-size: 15px;
         min-width: 165px;
         letter-spacing: 1px;
+      }
+      @media (max-width: $screen-sm-max) {
+        padding-left: 15px;
       }
       @media (max-width: $screen-xs-max) {
         .swap-xs {
@@ -761,6 +767,19 @@
         padding: 45px 0;
       }
     }
+    &.solution {
+      .product-detail-info .order {
+        margin-top: 5px;
+
+        @media (max-width: $screen-sm-max) {
+          margin-top: 30px;
+        }
+        @media (max-width: $screen-xs-max) {
+          margin-top: 5px;
+          margin-bottom: 10px;
+        }
+      }
+    }
     .product {
       &-name {
         font-size: 55px;
@@ -859,6 +878,24 @@
         }
       }
     }
+    .flex-detail {
+      @include flexbox();
+      @include flex-wrap(wrap);
+    }
+    .list-style {
+      margin-top: 70px;
+
+      li {
+        font-size: 18px;
+
+        &:not(:last-child) {
+          margin-bottom: 20px;
+        }
+      }
+      @media (max-width: $screen-sm-max) {
+        margin-top: 40px;
+      }
+    }
   }
   &-gallery {
     &-container {
@@ -871,6 +908,8 @@
       width: calc(20% - 24px);
       border: 1px solid #D1C1C7;
       cursor: pointer;
+      overflow: hidden;
+      outline: none;
       @include transition(border .3s ease);
 
       &:hover {
@@ -878,6 +917,34 @@
       }
       img {
         min-width: 100%;
+        max-width: none;
+        max-height: 170px;
+      }
+      @media (max-width: $screen-sm-max) {
+        border: 0;
+
+        img {
+          max-height: 50vh;
+          min-width: 0;
+          width: auto;
+          margin: 0 auto;
+        }
+      }
+    }
+    &-text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(#201c1a, .7);
+      min-height: 66px;
+      font-size: 16px;
+      font-weight: 400;
+      padding: 24px;
+      color: #fff;
+
+      @media (max-width: $screen-sm-max) {
+        padding-right: 60px;
       }
     }
     @media (max-width: $screen-md-max) {

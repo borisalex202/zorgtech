@@ -5,25 +5,94 @@
         <div class="modal-content">
             <div class="modal-body">
                 <div class="slider-product-gallery">
-                    <div class="item"><img src="img/gallery1.png" alt=""></div>
-                    <div class="item"><img src="img/gallery2.png" alt=""></div>
-                    <div class="item"><img src="img/gallery3.png" alt=""></div>
-                    <div class="item"><img src="img/gallery-big1.jpg" alt=""></div>
-                    <div class="item"><img src="img/gallery5.png" alt=""></div>
-                    <div class="item"><img src="img/gallery6.png" alt=""></div>
-                    <div class="item"><img src="img/gallery7.png" alt=""></div>
-                    <div class="item"><img src="img/gallery8.png" alt=""></div>
-                    <div class="item"><img src="img/gallery9.png" alt=""></div>
-                    <div class="item"><img src="img/gallery10.png" alt=""></div>
-                    <div class="item"><img src="img/gallery11.png" alt=""></div>
-                    <div class="item"><img src="img/gallery12.png" alt=""></div>
-                    <div class="item"><img src="img/gallery13.png" alt=""></div>
-                    <div class="item"><img src="img/gallery1.png" alt=""></div>
-                    <div class="item"><img src="img/gallery2.png" alt=""></div>
-                    <div class="item"><img src="img/gallery3.png" alt=""></div>
-                    <div class="item"><img src="img/gallery-big1.jpg" alt=""></div>
-                    <div class="item"><img src="img/gallery5.png" alt=""></div>
+                    <div class="item"><img src="img/1.jpg" alt=""></div>
+                    <div class="item"><img src="img/2.jpg" alt=""></div>
+                    <div class="item"><img src="img/3.jpg" alt=""></div>
+                    <div class="item">
+                        <div class="product-gallery-text">Diamant Multitouch на выставке высоких технологий в Казахстане</div>
+                        <img src="img/gallery-big1.jpg" alt="">
+                    </div>
+                    <div class="item"><img src="img/4.jpg" alt=""></div>
+                    <div class="item"><img src="img/5.jpg" alt=""></div>
+                    <div class="item"><img src="img/6.JPG" alt=""></div>
+                    <div class="item"><img src="img/7.jpg" alt=""></div>
+                    <div class="item"><img src="img/1.jpg" alt=""></div>
+                    <div class="item"><img src="img/2.jpg" alt=""></div>
+                    <div class="item"><img src="img/3.jpg" alt=""></div>
+                    <div class="item">
+                        <div class="product-gallery-text">Diamant Multitouch на выставке высоких технологий в Казахстане</div>
+                        <img src="img/gallery-big1.jpg" alt="">
+                    </div>
+                    <div class="item"><img src="img/4.jpg" alt=""></div>
+                    <div class="item"><img src="img/5.jpg" alt=""></div>
+                    <div class="item"><img src="img/6.JPG" alt=""></div>
+                    <div class="item"><img src="img/7.jpg" alt=""></div>
+                    <div class="item"><img src="img/1.jpg" alt=""></div>
+                    <div class="item"><img src="img/2.jpg" alt=""></div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+}
+@@if ( context.call === 'true') {
+<div class="modal standard" id="call" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <button class="modal-close" data-dismiss="modal"></button>
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="modal-title">Заказать звонок</div>
+                <!--<form action="">-->
+                    <div class="form-group">
+                        <input type="text" class="form-control">
+                        <div class="form-placeholder">Как вас зовут?</div>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" class="form-control">
+                        <div class="form-placeholder">Телефон</div>
+                    </div>
+                    <input type="submit" class="btn btn-default" value="Перезвонить мне" data-dismiss="modal" data-toggle="modal" data-target="#thanks">
+                <!--</form>-->
+            </div>
+        </div>
+    </div>
+</div>
+}
+@@if ( context.thanks === 'true') {
+<div class="modal standard" id="thanks" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <button class="modal-close" data-dismiss="modal"></button>
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="modal-title mini">Сообщение отправлено!</div>
+                <p>Мы свяжемся с вами в течение часа</p>
+            </div>
+        </div>
+    </div>
+</div>
+}
+@@if ( context.question === 'true') {
+<div class="modal standard" id="question" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <button class="modal-close" data-dismiss="modal"></button>
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="modal-title">Задать вопрос</div>
+                <!--<form action="">-->
+                <div class="form-group">
+                    <input type="text" class="form-control">
+                    <div class="form-placeholder">Как вас зовут?</div>
+                </div>
+                <div class="form-group">
+                    <input type="tel" class="form-control">
+                    <div class="form-placeholder">Телефон</div>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control">
+                    <div class="form-placeholder">Ваш вопрос</div>
+                </div>
+                <input type="submit" class="btn btn-default" value="Отправить" data-dismiss="modal" data-toggle="modal" data-target="#thanks">
+                <!--</form>-->
             </div>
         </div>
     </div>

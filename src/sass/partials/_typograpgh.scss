@@ -21,6 +21,11 @@ p {
   font-size: $font-size;
   font-weight: 400;
   line-height: 26px;
+
+  @media (max-width: $screen-sm-max) {
+    font-size: 18px;
+    line-height: 28px;
+  }
 }
 strong {
   font-weight: 500;
@@ -57,24 +62,65 @@ a {
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   font-weight: 500;
+  word-wrap: break-word;
+  color: $text-purple;
 }
 h1 {
   font-size: 35px;
+  line-height: 45px;
+
+  @media (max-width: $screen-sm-max) {
+    line-height: 35px;
+  }
+  @media (max-width: $screen-xs-max) {
+    font-size: 30px;
+  }
 }
 h2 {
   font-size: 32px;
+
+  @media (max-width: $screen-xs-max) {
+    font-size: 28px;
+  }
 }
 h3 {
   font-size: 28px;
+
+  @media (max-width: $screen-xs-max) {
+    font-size: 26px;
+  }
 }
 h4 {
   font-size: 26px;
+  margin-bottom: 20px;
+
+  @media (max-width: $screen-xs-max) {
+    font-size: 24px;
+  }
 }
 h5 {
   font-size: 24px;
+
+  @media (max-width: $screen-xs-max) {
+    font-size: 22px;
+  }
 }
 h6 {
   font-size: 22px;
+
+  @media (max-width: $screen-xs-max) {
+    font-size: 20px;
+  }
+}
+figure {
+  margin-bottom: 35px;
+}
+figcaption {
+  margin-top: 20px;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 14px;
+  color: rgba(#000, .7);
 }
 .text {
   &-light {

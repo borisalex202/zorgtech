@@ -7,7 +7,7 @@
 			<div class="container description">
 				<svg class="icon icon-logo"><use xlink:href="#icon-logo"></use></svg>
 				<p>уникальный российский производитель интерактивных киосков и сенсорных столов</p>
-				<a href="#" class="btn btn-default">Подробнее</a>
+				<a href="about.html" class="btn btn-default">Подробнее</a>
 			</div>
 			<div class="anchors">
 				<div class="container">
@@ -58,7 +58,7 @@
 								поддержку и техническое обслуживание нашей продукции.
 							</li>
 						</ul>
-						<a href="#" class="btn btn-default">О компании</a>
+						<a href="about.html" class="btn btn-default">О компании</a>
 					</div>
 					<div class="col-md-6 col-xs-12 widget-img hidden-sm hidden-xs">
 						<img src="img/widget-about.png" alt="">
@@ -391,7 +391,7 @@
 					<span>Блог</span>
 				</p>
 				<div class="new-container">
-					<a href="#" class="new-item">
+					<a href="#" class="new-item add-info">
 						<div class="new-thumb" style="background-image: url('img/new1.jpg');"></div>
 						<div class="new-content">
 							<span class="new-date">07.04.2016</span>
@@ -399,7 +399,7 @@
 							<p class="new-description">Компания Zorgtech готова предложить новые модели сенсорных киосков для своих покупателей</p>
 						</div>
 					</a>
-					<a href="#" class="new-item hidden-xs">
+					<a href="#" class="new-item add-info hidden-xs">
 						<div class="new-thumb" style="background-image: url('img/new2.jpg');"></div>
 						<div class="new-content">
 							<span class="new-date">07.04.2016</span>
@@ -407,7 +407,7 @@
 							<p class="new-description">Компания Zorgtech готова предложить новые модели сенсорных киосков для своих покупателей</p>
 						</div>
 					</a>
-					<a href="#" class="new-item hidden-xs hidden-sm">
+					<a href="#" class="new-item add-info hidden-xs hidden-sm">
 						<div class="new-thumb" style="background-image: url('img/new3.jpg');"></div>
 						<div class="new-content">
 							<span class="new-date">07.04.2016</span>
@@ -420,5 +420,10 @@
 		</div>
 		@@include('./templates/_widget_begin.html')
 
+@@include('templates/_modals.html', {
+"call": "true",
+"thanks": "true",
+"question": "true"
+})
 @@include('templates/_footer.html')
 @@include('templates/_end.html')

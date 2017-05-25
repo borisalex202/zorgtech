@@ -31,6 +31,7 @@
   &-primary {
     background: $btn-primary-bg;
     color: $text-purple;
+    @include box-shadow(0 0 18px 7px rgba(#abb2c5, 0.05));
 
     &:hover {
       background: $btn-primary-bg-hover;

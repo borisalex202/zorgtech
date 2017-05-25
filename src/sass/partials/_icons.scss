@@ -21,6 +21,11 @@
     background: transparent;
     border-radius: 0;
 
+    &.open-nav,
+    &.close-nav {
+      pointer-events: none;
+      @include opacity(0);
+    }
     @media (min-width: $screen-md) {
       display: none;
     }

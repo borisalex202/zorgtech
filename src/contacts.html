@@ -1,0 +1,147 @@
+@@include('templates/_head.html', {
+"title": "Zorgtech - Контакты"
+})
+@@include('templates/_header.html')
+
+        <div class="content-page map-container">
+            <div class="container">
+                <div class="map-info">
+                    <div class="content-page-title">
+                        <h1>Контакты</h1>
+                    </div>
+                    <div class="contact-block">
+                        <img src="img/svg/call-back.svg" alt="" class="icon">
+                        <div class="contact-name">Единый контактный центр</div>
+                        <a href="tel:8 800 505 32 67" class="contact-phone">8 800 505 32 67</a>
+                        <a href="mailto:sale+33054@zorgtech.ru" class="contact-email">sale+33054@zorgtech.ru</a>
+                        <p class="contact-address">141980, Московская область, г. Дубна, ул. Университетская, д.11, стр. 29А.</p>
+                    </div>
+                    <div class="contact-block">
+                        <img src="img/svg/tool_small.svg" alt="" class="icon">
+                        <div class="contact-name">ТЕХНИЧЕСКАЯ ПОДДЕРЖКА</div>
+                        <a href="tel:8 800 555 96 83" class="contact-phone">8 800 555 96 83</a>
+                        <a href="mailto:support@zorgtech.ru" class="contact-email">support@zorgtech.ru</a>
+                    </div>
+                </div>
+                <div id="map"></div>
+            </div>
+        </div>
+        <div class="widget standard detail">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-xs-12 ind-30-sm">
+                        <h3>Региональные представительства</h3>
+                        <ul class="list-unstyled fs-20">
+                            <li>Санкт-Петербург</li>
+                            <li>Нижний Новгород</li>
+                            <li>Представительство в Перми</li>
+                            <li>Представительство в Казахстане</li>
+                            <li>Представительство в Беларуси</li>
+                        </ul>
+                        <div class="contact-name">обслуживаниЕ филиалов</div>
+                        <a href="tel:8 800 555 96 83" class="contact-phone">8 800 555 96 83</a>
+
+                        <ul class="list-unstyled fs-20 text-uppercase">
+                            <li><a href="support.html" class="text-semibold">поддержка</a></li>
+                            <li><a href="delivery.html" class="text-semibold">доставка и сервис</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-offset-2 col-md-6 col-xs-12">
+                        <h3>Реквизиты</h3>
+                        <ul class="list-unstyled fs-20">
+                            <li>Общество с ограниченной ответственностью «Зорг» <br>ООО «Зорг»</li>
+                            <li><strong>Юридический адрес:</strong><br>
+                                141980, Московская область, г. Дубна,<br>
+                                ул.Университетская, д.11, стр. 29А</li>
+                            <li><strong>Фактический адрес:</strong><br>
+                                141980, Московская область, г. Дубна,<br>
+                                ул.Университетская, д.11, стр. 29А</li>
+                            <li><strong>ИНН/КПП:</strong> 5010044415/501001001</li>
+                            <li><strong>ОКПО/ОГРН:</strong> 37567983/1125010000246</li>
+                            <li><strong>ОКВЭД:</strong> 30.02</li>
+                            <li><strong>Банк:</strong> ВТБ 24 (ПАО) г. Москва</li>
+                            <li><strong>Расчетный счет:</strong> 40702810700000018680</li>
+                            <li><strong>Корреспондентский счет:</strong> 30101810100000000716</li>
+                            <li><strong>БИК:</strong> 044525716</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+@@include('templates/_modals.html', {
+"call": "true",
+"thanks": "true",
+"question": "true"
+})
+@@include('templates/_footer.html')
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIfMx0nIiIGL1ZR1xqQm1Br8DN665cfN8&callback" async defer></script>
+        <script>
+            var map;
+            var markers = [];
+            var markersArray = [
+                {
+                    title: '1',
+                    lat: 55.7727359,
+                    lng: 37.5864169,
+                    zIndex: 1
+                },
+                {
+                    title: '2',
+                    lat: 56.7414449,
+                    lng: 37.217466,
+                    zIndex: 2
+                }
+            ];
+
+            function initMap() {
+                var myLatlng = new google.maps.LatLng(56.2945941,36.3518564),
+                    stylesArray = [
+                        {
+                            "featureType": "all",
+                            "elementType": "all",
+                            "stylers": [
+                                {
+                                    "saturation": -100
+                                },
+                                {
+                                    "gamma": 0.8
+                                }
+                            ]
+                        }
+                    ];
+                var mapOptions = {
+                    zoom: 8,
+                    center: myLatlng,
+                    scrollwheel: false,
+                    mapTypeControl: false,
+                    styles: stylesArray
+                };
+                map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+                var infoWindow = new google.maps.InfoWindow({
+                    maxWidth: 480
+                });
+
+                for (var i = 0; i < markersArray.length; i++) {
+                    var data = markersArray[i];
+                    var marker = new google.maps.Marker({
+                        position: {lat: data.lat, lng: data.lng},
+                        map: map,
+                        icon: 'img/marker.png',
+                        title: data.title,
+                        zIndex: data.zIndex,
+                        size: new google.maps.Size(52, 52),
+                        origin: new google.maps.Point(0, 0),
+                        anchor: new google.maps.Point(0, 0),
+                        scaledSize: new google.maps.Size(52, 52)
+                    });
+                    markers.push(marker);
+                }
+            }
+
+            window.onload = function () {
+                initMap();
+            };
+        </script>
+@@include('templates/_end.html')

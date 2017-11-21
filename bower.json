@@ -17,7 +17,6 @@
     "jquery": "2.1.*",
     "html5shiv": "*",
     "bootstrap-sass": "3.*",
-    "slick-carousel": "^1.6.0",
-    "jquery-mask-plugin": "^1.14.10"
+    "slick-carousel": "^1.6.0"
   }
 }

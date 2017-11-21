@@ -122,6 +122,9 @@ figcaption {
   font-size: 14px;
   color: rgba(#000, .7);
 }
+iframe {
+  border: 0;
+}
 .text {
   &-light {
     font-weight: 300;

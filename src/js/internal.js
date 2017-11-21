@@ -26,7 +26,7 @@
         scrollbarWidth: scrollbarWidth(),
         scroll: $(document).scrollTop()
     };
-    
+
     @@include('./partials/_slider.js')
 
     var navInitScrollTop;
@@ -131,39 +131,61 @@
         elements.overlay.removeClass('active');
         showMainScroll();
     });
-    $('[type="tel"]').mask("+7(999)999-99-99");
+    $('[type="tel"]').mask('+7 (999) 99-99-99');
 
+    var showTr = 0,
+        count = 1,
+        countLenth = 0;
     elements.tableFlex.find('.table-flex__tr:nth-child(n+8)').addClass('tr_hidden');
     $('.table-flex__tr.tr_hidden').each(function () {
-        $(this).data('height', $(this).outerHeight()).css({
-            maxHeight: 0,
-            paddingTop: 0,
-            paddingBottom: 0,
-            borderWidth: 0
-        });
+        $(this)
+            .data('height', $(this).outerHeight()).css({
+                maxHeight: 0,
+                paddingTop: 0,
+                paddingBottom: 0,
+                borderWidth: 0
+            });
+        countLenth++;
     });
-    var showTr = 0;
+
     $('.toggle-table').on('click', function () {
         if(showTr === 0) {
             elements.tableFlex.find('.tr_hidden').each(function () {
-                var height = $(this).data('height');
-                console.log(height);
-               $(this).css({
+                var height = $(this).data('height'),
+                    el = $(this);
+                el
+                .css({
                     maxHeight: height,
                     paddingTop: (options.documentWidth > grid.md ? 25 : 20),
                     paddingBottom: (options.documentWidth > grid.md ? 25 : 20),
                     borderWidth: 1
-                });
+                })
+                .data('show', 100 * count );
+
+                count++;
+                setTimeout(function(){
+                     el.addClass('normal');
+                }, el.data('show'));
             });
             showTr = 1;
         } else {
+            count = countLenth;
             elements.tableFlex.find('.tr_hidden').each(function () {
-                $(this).css({
-                    maxHeight: 0,
-                    paddingTop: 0,
-                    paddingBottom: 0,
-                    borderWidth: 0
-                });
+                var el = $(this)
+                setTimeout(function(){
+                    el.css({
+                        maxHeight: 0,
+                        paddingTop: 0,
+                        paddingBottom: 0,
+                        borderWidth: 0
+                    })
+                }, count * 100 );
+                el.data('show', 100 * count );
+
+                count--;
+                setTimeout(function(){
+                     el.removeClass('normal');
+                }, el.data('show'));
             });
             showTr = 0;
         }

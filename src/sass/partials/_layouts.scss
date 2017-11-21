@@ -466,7 +466,7 @@
     @include align-items(flex-end);
 
     .description {
-      margin-bottom: 9%;
+      margin-bottom: 180px;
 
       img {
         margin-bottom: 40px;
@@ -531,7 +531,7 @@
       min-height: 715px;
 
       .description {
-        margin-bottom: 50px;
+        margin-bottom: 90px;
 
         p {
           margin-bottom: 20px;
@@ -1348,6 +1348,7 @@
 }
 .table-flex {
   width: 100%;
+  overflow: hidden;
   @include flexbox();
   @include flex-wrap(wrap);
 
@@ -1363,6 +1364,11 @@
     &.tr_hidden {
       overflow: hidden;
       @include transition(all .5s ease-in-out);
+      @include translate(100%, 0);
+
+      &.normal {
+          @include translate(0, 0);
+      }
     }
     &.tr_flex {
       display: -webkit-box !important;
@@ -2224,5 +2230,12 @@
 .ind-30-sm {
   @media (max-width: $screen-sm-max) {
     margin-bottom: 30px;
+  }
+}
+.range {
+  &:focus {
+    @include placeholder {
+      @include opacity(0);
+    }
   }
 }
